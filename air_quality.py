@@ -1,5 +1,6 @@
 import time
 import board
+import csv
 
 import serial
 uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.25)
