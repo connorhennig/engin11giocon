@@ -11,12 +11,29 @@ pm25 = PM25_UART(uart, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
 
+f = open("air_quality_data.csv","w", newline = '')
+
+meta_data = ["Time","PM10","PM25","PM100"]
+
+writer = csv.writer(f)
+
+writer.writerow(meta_data)
+
 while True:
     time.sleep(1)
 
     try:
         aqdata = pm25.read()
         # print(aqdata)
+        itime = time.time()
+        PM10 = aqdata["pm10 standard"]
+        PM25 = aqdata["pm25 standard"]
+        PM100 = aqdata["pm100 standard"]
+        
+        data = [itime,PM10,PM25,PM100]
+        
+        writer.writerow(data)
+        
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
