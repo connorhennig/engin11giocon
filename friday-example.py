@@ -30,7 +30,7 @@ print(file_name)
 file = open(file_name,"w", newline='')
 writer = csv.writer(file)
 meta_data = ["Time","PM10","PM25","PM100","Temp","Gas","Relative Humidity","Pressure","Altitude"]
-writer.writenow(meta_data)
+writer.writerow(meta_data)
 
 while itime < (start_time + run_time):
     time.sleep(1)
@@ -47,37 +47,6 @@ while itime < (start_time + run_time):
         Press = bme680.pressure
         Alt = bme680.altitude
         data = [itime,PM10,PM25,PM100,Temp,Gas,RelHum,Press,Alt]
-        
-        writer.writerow(data)
-        
-    except RuntimeError:
-        print("Unable to read from sensor, retrying...")
-        continue
-
-
-
-
-
-
-
-
-
-
-
-
-
-while True:
-    time.sleep(1)
-
-    try:
-        aqdata = pm25.read()
-        # print(aqdata)
-        itime = time.time()
-        PM10 = aqdata["pm10 standard"]
-        PM25 = aqdata["pm25 standard"]
-        PM100 = aqdata["pm100 standard"]
-        
-        data = [itime,PM10,PM25,PM100]
         
         writer.writerow(data)
         
