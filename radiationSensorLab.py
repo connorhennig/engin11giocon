@@ -7,7 +7,7 @@ channel = 16
 count = 0
 mincount = 0
 
-def my_callback(channel):
+def my_callback():
     count = count + 1
     mincount = mincount + 1
     print('Radiation detected at ' + str(datetime.datetime.now())) 
@@ -18,7 +18,7 @@ while True:
         try:
             #GPIO.setmode(GPIO.BCM)
             GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-            GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback(channel), bouncetime=200)
+            GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback(), bouncetime=100)
         except:
             pass
     print('CPM is {}'.format(mincount))
