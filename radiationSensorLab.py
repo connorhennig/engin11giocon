@@ -16,7 +16,7 @@ while True:
     current_time = time.time()
     while (( time.time() - current_time ) <= 60):
         try:
-            #GPIO.setmode(GPIO.BCM)
+            GPIO.setmode(GPIO.BCM)
             GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
             GPIO.add_event_detect(channel, GPIO.FALLING, callback= my_callback, bouncetime=100)
         except:
