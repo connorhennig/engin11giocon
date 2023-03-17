@@ -20,7 +20,7 @@ while True:
         try:
             GPIO.setmode(GPIO.BCM)
             GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-            GPIO.add_event_detect(channel, GPIO.FALLING, callback= my_callback, bouncetime=100)
+            GPIO.add_event_detect(channel, GPIO.FALLING, callback= my_callback, bouncetime=200)
         except:
             pass
     print('CPM is {}'.format(mincount))
