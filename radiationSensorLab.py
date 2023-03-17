@@ -16,11 +16,11 @@ def my_callback(channel):
 while True:
     current_time = time.time()
     while (( time.time() - current_time ) <= 60):
-            try:
-                #GPIO.setmode(GPIO.BCM)
-                GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-                GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback(channel), bouncetime=200)
-            except:
-                pass
+        try:
+            #GPIO.setmode(GPIO.BCM)
+            GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+            GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback(channel), bouncetime=200)
+        except:
+            pass
     print('CPM is {}'.format(mincount))
     mincount = 0
