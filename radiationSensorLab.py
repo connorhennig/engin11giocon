@@ -8,10 +8,9 @@ count = 0
 mincount = 0
 
 def my_callback(channel):
-    if GPIO.input(channel) == GPIO.HIGH:
-        count = count + 1
-        mincount = mincount + 1
-        print('Radiation detected at ' + str(datetime.datetime.now())) 
+    count = count + 1
+    mincount = mincount + 1
+    print('Radiation detected at ' + str(datetime.datetime.now())) 
 
 while True:
     current_time = time.time()
