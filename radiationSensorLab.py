@@ -8,8 +8,8 @@ count = 0
 mincount = 0
 
 def my_callback(channel):
-    global count = count + 1
-    global mincount = mincount + 1
+    global count += 1
+    global mincount += 1
     print('Radiation detected at ' + str(datetime.datetime.now())) 
 
 while True:
