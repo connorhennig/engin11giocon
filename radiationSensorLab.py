@@ -4,8 +4,8 @@ import time
 
 channel = 16
 
-count = 0
-mincount = 0
+global count = 0
+global mincount = 0
 
 def my_callback(channel):
     count = count + 1
