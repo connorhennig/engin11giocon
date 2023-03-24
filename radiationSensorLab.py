@@ -41,7 +41,7 @@ while ((time.time() - start_time) <= run_time):
         except:
             pass
     print('{} counts in {} seconds'.format(mincount,interval))
-    
+    current_time = time.time()
     data = [current_time,mincount]
     writer.writerow(data)
     mincount = 0
