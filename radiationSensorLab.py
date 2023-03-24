@@ -42,6 +42,6 @@ while ((time.time() - start_time) <= run_time):
             pass
     print('CPM is {}'.format(mincount))
     
-    data = [current_time,cpm_current]
+    data = [current_time,mincount]
     writer.writerow(data)
     mincount = 0
