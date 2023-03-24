@@ -19,7 +19,7 @@ if (len(sys.argv) > 3):
 print(file_name)
 file = open(file_name,"w", newline='')
 writer = csv.writer(file)
-meta_data = ["Time",CPM]
+meta_data = ["Time","CPM"]
 writer.writerow(meta_data)
 
 def my_callback(channel):
