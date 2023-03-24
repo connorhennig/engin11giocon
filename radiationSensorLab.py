@@ -19,7 +19,7 @@ if (len(sys.argv) > 3):
 print(file_name)
 file = open(file_name,"w", newline='')
 writer = csv.writer(file)
-meta_data = ["Time","CPM"]
+meta_data = ["Time","Counts"]
 writer.writerow(meta_data)
 
 def my_callback(channel):
@@ -45,3 +45,5 @@ while ((time.time() - start_time) <= run_time):
     data = [current_time,mincount]
     writer.writerow(data)
     mincount = 0
+
+file.close()
