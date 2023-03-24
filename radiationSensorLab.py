@@ -40,7 +40,7 @@ while ((time.time() - start_time) <= run_time):
             GPIO.add_event_detect(channel, GPIO.FALLING, callback= my_callback, bouncetime=50)
         except:
             pass
-    print('CPM is {}'.format(mincount))
+    print('{} counts in {} seconds'.format(mincount,interval))
     
     data = [current_time,mincount]
     writer.writerow(data)
