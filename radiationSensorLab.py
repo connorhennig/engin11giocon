@@ -4,7 +4,7 @@ import time
 import csv
 import sys
 
-channel = 16
+channel = 17
 
 count = 0
 mincount = 0
